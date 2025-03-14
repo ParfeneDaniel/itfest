@@ -1,0 +1,33 @@
+#custom-select {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+
+    & .selector {
+        width: 100%;
+        background-color: var(--secondary);
+        appearance: none;
+        color: var(--text-light);
+        cursor: pointer;
+        padding: 0.5rem 1.5rem 0.5rem 0.8rem;
+        margin-right: 1rem;
+        font-family: "Merriweather Sans", sans-serif;
+        font-size: 1.5rem;
+        border: none;
+    }
+
+}
+
+#custom-select::after {
+    content: '▼';
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-light);
+}
+
+

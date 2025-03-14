@@ -1,0 +1,61 @@
+#card {
+    padding: 2rem;
+    margin: 5rem 0;
+    background-color: var(--primary-light);
+    border: 2px solid var(--primary);
+    border-radius: 2rem;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+
+    & .card-request {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .card-request--name,
+    & .card-request--email,
+    & .card-request--faculty,
+    & .card-request--details {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    & .card-request > div > p {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        color: var(--text);
+        font-family: "Merriweather Sans", sans-serif;
+    }
+
+    & .card-request > div p:first-child {
+        width: 30%;
+    }
+
+    & .card-request > div p:nth-child(2) {
+        width: 70%;
+        position: relative;
+    }
+
+    & .card-btn {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+
+/*     & .card-request > div p:nth-child(2)::after {
+        position: absolute;
+        content: "";
+        background: var(--text);
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+    } */
+}
