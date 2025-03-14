@@ -8,12 +8,12 @@ input, textarea {
     margin-bottom: 1rem;
 }
 
-label {
+div {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
-label > span {
+label {
     font-size: 1.3rem;
     font-family: "Merriweather Sans", sans-serif;
     color: var(--text);
