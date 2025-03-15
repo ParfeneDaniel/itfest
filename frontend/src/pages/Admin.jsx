@@ -10,8 +10,10 @@ const Admin = () => {
       {
         name: "Cosmin Bonchis",
         email: "bonchis@e-uvt.ro",
-        university: "Facultatea de Matematică și Informatică, Universitatea de Vest Timișoara",
-        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!",
+        university:
+          "Facultatea de Matematică și Informatică, Universitatea de Vest Timișoara",
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!",
       },
       {
         name: "Ana",
@@ -33,7 +35,7 @@ const Admin = () => {
       },
     ];
 
-/*   return (
+  return (
     <div>
       <Header type="admin" />
       <div id="dashboard" className="posts">
@@ -73,9 +75,6 @@ const Admin = () => {
             })}
       </div>
     </div>
-  ); */
-  return (
-    <Leaderboard />
   );
 };
 

@@ -6,6 +6,7 @@ import Admin from "../pages/Admin";
 import Post from "../pages/Post";
 import DashboardStudent from "../pages/DashboardStudent";
 import DashboardFaculty from "../pages/DashboardFaculty";
+import Leaderboard from "../pages/Leaderboard";
 
 export const router = createBrowserRouter([
     {
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
     {
         path: "decan",
         element: <DashboardFaculty />
+    },
+    {
+        path: "leaderboard",
+        element: <Leaderboard />
     },
 ])
