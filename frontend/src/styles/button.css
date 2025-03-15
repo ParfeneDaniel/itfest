@@ -1,6 +1,6 @@
 .filledButton {
   padding: 0.5rem 1rem;
-  margin: 0 1rem;
+  margin: 1rem 1rem 0;
   width: fit-content;
   background-color: var(--secondary);
   color: var(--text-light);
