@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="../styles/card.css" />
     <link rel="stylesheet" href="../styles/selector.css" />
     <link rel="stylesheet" href="../styles/button.css" />
-    <link rel="stylesheet" href="../styles/search-bar.css">
-    <link rel="stylesheet" href="../styles/round-btn.css">
+    <link rel="stylesheet" href="../styles/search-bar.css" />
+    <link rel="stylesheet" href="../styles/form.css">
+    <link rel="stylesheet" href="../styles/input.css">
     <script
       src="https://kit.fontawesome.com/3b74847688.js"
       crossorigin="anonymous"
@@ -58,11 +59,23 @@
           <button class="button card-btn-1">Respinge</button>
           <button class="button card-btn-2">Acceptă</button>
         </div>
-      </div> 
+      </div>
     </div>
 
-
-
-    
+    <div id="dashboard">
+      <form id="form">
+        <div class="choice-container">
+          <div class="choice choice-selected">Student</div>
+          <div class="choice choice-selected">Facultate</div>
+          <div class="choice choice-selected">Admin</div>
+        </div>
+        <h1 class="form-title">Conectează-te</h1>
+        <div class="input"><label>Email</label><input label="Email" /></div>
+        <div class="input">
+          <label>Password</label><input label="Password" />
+        </div>
+        <button class="filledButton" action="">Conectează-te</button>
+      </form>
+    </div>
   </body>
 </html>
