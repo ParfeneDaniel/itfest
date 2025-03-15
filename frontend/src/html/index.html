@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/sidenav.css">
+    <link rel="stylesheet" href="../styles/button.css">
+    <link rel="stylesheet" href="../styles/round-btn.css">
+    <link rel="stylesheet" href="../styles/search-bar.css">
+    <link rel="stylesheet" href="../styles/answer-bar.css">
+    <link rel="stylesheet" href="../styles/question.css">
     <script src="https://kit.fontawesome.com/3b74847688.js" crossorigin="anonymous"></script>
     <title>Learnix</title>
 </head>
 <body>
-    <header id="header">
+<!--     <header id="header">
         <p class="header-info">Grupa X</p>
         <p class="header-logo">LearniX</p>
         <i class="fa-solid fa-circle-user header-user"></i>
-    </header>
+    </header> -->
 
-    <div id="side-nav">
+<!--     <div id="side-nav">
         <ul>
           <li>ASD-II</li>
           <li>P-II</li>
@@ -25,7 +30,44 @@
           <li>EWB</li>
           <li>MPI</li>
         </ul>
-    </div>
+    </div> -->
 
+    <div class="content">
+        <div class="top-content">
+            <form id="search-bar">
+                <input type="text" class="search-bar-input" placeholder="Search...">
+                <button class="search-bar-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+          <button class="round-btn"><i class="fa-solid fa-plus"></i></button>
+          <button class="round-btn"><i class="fa-solid fa-trophy"></i></button>
+        </div>
+  
+        <div class="question">
+          <div class="question-header">
+            <div class="question-header-user">
+              <i class="fa-solid fa-circle-user"></i>
+              <p>Lopsa Andrei</p>
+            </div>
+            <p>27/03/2025</p>
+          </div>
+          <div class="question-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eos,
+              voluptatibus vitae sint explicabo omnis aspernatur est repellendus
+              tempore vel autem neque cumque non a inventore. Similique rerum
+              dolorum ullam voluptatem? Eum quam itaque laudantium officiis ab
+              ullam cumque repellendus explicabo enim iure. Quia nobis tenetur
+              iure quidem, modi possimus.
+            </p>
+          </div>
+          <div class="btn-container">
+              <button class="button question-form-btn">
+                Raspunde
+              </button>
+          </div>
+        </div>
+      </div>
 </body>
 </html>

@@ -1,0 +1,29 @@
+#search-bar {
+    position: relative;
+    width: 50rem;
+    
+    & .search-bar-input {
+        width: 50rem;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        font-size: 1.2rem;
+        font-family: "Merriweather Sans", sans-serif;
+        color: var(--text);
+        letter-spacing: 0.1rem;
+        outline: none;
+        border: 0.1rem solid var(--primary);
+        border-radius: 10rem;
+        position: relative;
+    }
+
+    & .search-bar-btn {
+        position: absolute;
+        color: var(--text);
+        font-size: 1.4rem;
+        top: 0.9rem;
+        right: 1.5rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
