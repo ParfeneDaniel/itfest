@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 
 const groupSchema = mongoose.Schema(
   {
-    name: {
+    yearName: {
+      type: String,
+      required: true,
+    },
+    number: {
       type: String,
       required: true,
     },

@@ -1,4 +1,3 @@
-const Forbidden = require("../../errors/Forbidden");
 const Headmaster = require("../../models/headmaster");
 const Student = require("../../models/student");
 const correctPassword = require("../../services/correctPassword");

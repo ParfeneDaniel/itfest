@@ -28,15 +28,12 @@ const acceptRequest = async (req, res) => {
     email: request.email,
   });
 
-  const newHeadmaster = createHeadmasterAccount(request.email);
+  const { newHeadmaster, password } = createHeadmasterAccount(request.email);
 
   await Promise.all([
     newUniversity.save(),
     newHeadmaster.save(),
-    sendEmail(
-      newHeadmaster.email,
-      ...createHeadmasterEmail(newHeadmaster.password)
-    ),
+    sendEmail(newHeadmaster.email, ...createHeadmasterEmail(password)),
   ]);
 
   return res.status(201).json({ message: "Your request was accepted!" });

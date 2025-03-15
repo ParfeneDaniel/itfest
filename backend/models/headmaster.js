@@ -12,17 +12,25 @@ const headmasterSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
-    groups: [
+    years: [
       {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Group",
-          required: true,
-        },
         name: {
           type: String,
           required: true,
         },
+        groups: [
+          {
+            id: {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Group",
+              required: true,
+            },
+            number: {
+              type: Number,
+              required: true,
+            },
+          },
+        ],
         subjects: [{ type: String, unique: true }],
       },
     ],
