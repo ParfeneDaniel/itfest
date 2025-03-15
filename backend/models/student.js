@@ -18,10 +18,19 @@ const studentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    groupNumber: {
-      type: Number,
-      required: true,
-    },
+    groups: [
+      {
+        id: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Group",
+          required: true,
+        },
+        number: {
+          type: Number,
+          required: true,
+        },
+      },
+    ],
     upVotes: {
       type: Number,
       default: 0,

@@ -10,8 +10,7 @@ const groupSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    pending: [{ type: String }],
-    accepted: [{ type: String }],
+    students: [{ type: String }],
     subjects: [
       {
         name: {

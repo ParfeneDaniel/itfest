@@ -3,12 +3,12 @@ const createPassword = require("./createPassword");
 const sendEmail = require("./sendEmail");
 const createStudentAccount = require("../data/createStudent");
 
-const createStudent = async (email, year, number) => {
+const createStudent = async (email, id, year, number) => {
   const { password, hashedPassword } = createPassword();
   const student = new Student({
     email,
     yearName: year,
-    groupNumber: number,
+    groups: [{ id, number }],
     password: hashedPassword,
   });
 
