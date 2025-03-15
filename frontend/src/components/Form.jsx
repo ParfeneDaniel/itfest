@@ -1,8 +1,11 @@
 import Button from "./Button";
 import Input from "./Input";
 import "../styles/form.css";
+import { useState } from "react";
 
-const Form = ({ title, inputs, button, onSubmit }) => {
+const Form = ({ title, inputs, button, onSubmit, type }) => {
+  const [selectedValue, setSelectedValue] = useState("student");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,7 +34,36 @@ const Form = ({ title, inputs, button, onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit} id="form">
-      <h1 class="form-title">{title}</h1>
+      {type == "tab" && (
+        <div className="choice-container">
+          <div
+            onClick={() => setSelectedValue("student")}
+            className={
+              "choice " + (selectedValue == "student" ? "choice-selected" : "")
+            }
+          >
+            Student
+          </div>
+          <div
+            onClick={() => setSelectedValue("facultate")}
+            className={
+              "choice " +
+              (selectedValue == "facultate" ? "choice-selected" : "")
+            }
+          >
+            Facultate
+          </div>
+          <div
+            onClick={() => setSelectedValue("admin")}
+            className={
+              "choice " + (selectedValue == "admin" ? "choice-selected" : "")
+            }
+          >
+            Admin
+          </div>
+        </div>
+      )}
+      <h1 class="form-title">{type === "tab" ? (title + " " + selectedValue) : title}</h1>
       {inputs.map((input, index) => {
         return (
           <Input

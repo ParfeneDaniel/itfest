@@ -1,8 +1,7 @@
 .question {
     background-color: var(--primary-light);
-    width: 60rem;
+    width: 100%;
     padding: 2rem;
-    margin-top: 5rem;
     border: 0.2rem solid var(--primary);
     border-radius: 0.5rem;
     display: flex;
@@ -27,7 +26,7 @@
         font-size: 1.5rem;
         padding: 0 1rem;
     }
-
+    
     & .question-header > p {
         font-size: 1rem;
         padding: 0 1rem;
@@ -35,7 +34,7 @@
 
     & .question-content {
         font-size: 1.5rem;
-        padding: 3rem 1rem;
+        padding: 3rem 0 0 1rem;
     }
 
     & .btn-container {
