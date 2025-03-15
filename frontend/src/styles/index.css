@@ -9,13 +9,14 @@
 }
 
 :root {
-  --background: #fbf8ef;
-  --primary-light: #c9e6f0;
-  --primary: #78b3ce;
-  --secondary: #f96e2a;
-  --secondary-dark: #ff5d0c;
-  --text: #1e2429;
-  --text-light: #fbf8ef;
+    --background: #FBF8EF;
+    --primary-light: #C9E6F0;
+    --primary: #78B3CE;
+    --secondary: #F96E2A;
+    --secondary-dark: #ff5d0c;
+    --text: #1e2429;
+    --text-light: #FBF8EF;
+    --border: #d0d0d0;
 }
 
 body {

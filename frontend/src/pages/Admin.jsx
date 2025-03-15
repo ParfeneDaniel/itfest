@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import RequestCard from "../components/AdminCard";
 import "../styles/selector.css";
+import Leaderboard from "./Leaderboard";
 
 const Admin = () => {
   const [value, setValue] = useState("cereri");
@@ -32,7 +33,7 @@ const Admin = () => {
       },
     ];
 
-  return (
+/*   return (
     <div>
       <Header type="admin" />
       <div id="dashboard" className="posts">
@@ -72,6 +73,9 @@ const Admin = () => {
             })}
       </div>
     </div>
+  ); */
+  return (
+    <Leaderboard />
   );
 };
 
