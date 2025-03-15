@@ -9,10 +9,12 @@ const {
   validateIdentity,
 } = require("../controllers/admin");
 const authorization = require("../../middlewares/authorization");
+const validIds = require("../../middlewares/validIds");
 
 const router = Router();
 
 router.use(authorization("admin"));
+router.use(validIds);
 router.get("/requests", tryCatch(getRequests));
 router.get("/universities", tryCatch(getUniversities));
 router.post("/request/:requestId", tryCatch(acceptRequest));
