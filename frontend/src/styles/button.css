@@ -10,3 +10,18 @@
   border-radius: 2rem;
   cursor: pointer;
 }
+
+.small {
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+}
+
+.medium {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.3rem;
+}
+
+.big {
+  font-size: 1.5rem;
+  padding: 0.7rem 1.7rem;
+}
