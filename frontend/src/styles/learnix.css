@@ -1,0 +1,27 @@
+:root {
+  --size: 0.1rem;
+}
+
+.medium {
+  --size: 0.2rem;
+}
+
+.big {
+  --size: 0.3rem;
+}
+
+.learnix {
+  font-size: calc(var(--size) * 1.8rem);
+  color: var(--background);
+  background-color: var(--text);
+  border-radius: 50px;
+  padding: 0 15px;
+  letter-spacing: 0.1rem;
+}
+
+.orange {
+  color: var(--secondary);
+  font-size: calc(var(--size) * 2.3rem);
+  font-style: italic;
+  font-family: "Permanent Marker";
+}

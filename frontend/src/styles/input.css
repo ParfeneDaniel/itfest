@@ -8,7 +8,7 @@ input, textarea {
     margin-bottom: 1rem;
 }
 
-div {
+.input, .textarea {
     display: flex;
     flex-direction: column;
 }

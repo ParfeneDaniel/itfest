@@ -1,6 +1,8 @@
 import Request from "./pages/Request";
 import Header from "./components/Header";
 import SideNav from "./components/SideNav";
+import Admin from "./pages/Admin";
+import Landing from "./pages/Landing";
 
 function App() {
   
@@ -9,7 +11,9 @@ function App() {
     <>
       {/* <Header />
       <SideNav /> */}
-      <Request/>
+      {/* <Request/> */}
+      {/* <Admin /> */}
+      <Landing />
     </>
   );
 }
