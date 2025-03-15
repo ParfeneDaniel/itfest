@@ -25,8 +25,9 @@ const Login = () => {
       <Header />
       <div id="dashboard">
         <Form
+          type="tab"
           inputs={inputs}
-          title="Conectează-te"
+          title="Conectează-te ca"
           onSubmit={() => console.log("Submit")}
           button={button}
         />

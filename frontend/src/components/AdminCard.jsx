@@ -23,8 +23,8 @@ const AdminCard = (props) => {
   return (
     <div className="request-card">
       <span>
-        <h1>{props.name} - </h1>
-        <h2>{props.university}</h2>
+        <h2>{props.name} - </h2>
+        <h3>{props.university}</h3>
       </span>
       <a target="_blank" href={"mailto:" + props.email}>
         <p className="field-email">{props.email}</p>

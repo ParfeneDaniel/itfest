@@ -10,7 +10,7 @@ const Admin = () => {
         name: "Cosmin Bonchis",
         email: "bonchis@e-uvt.ro",
         university: "Facultatea de Matematică și Informatică, Universitatea de Vest Timișoara",
-        details: "Colaboram?",
+        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!",
       },
       {
         name: "Ana",
@@ -35,7 +35,7 @@ const Admin = () => {
   return (
     <div>
       <Header type="admin" />
-      <div id="dashboard">
+      <div id="dashboard" className="posts">
         <div className="left">
           <div id="custom-select">
             <select
