@@ -1,0 +1,29 @@
+.request-card {
+    border: 2px solid var(--primary);
+    font-size: 1.3rem;
+    padding: 25px;
+    background-color: var(--primary-light);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & .field-name {
+        font-weight: 700;
+    }
+
+    & .field-email {
+        background-color: var(--background);
+        width: fit-content;
+        padding: 2px 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        color: var(--secondary);
+        text-decoration: underline;
+        text-decoration-color: var(--secondary);
+    }
+
+    & h2, & h1 {
+        display: inline;
+    }
+}

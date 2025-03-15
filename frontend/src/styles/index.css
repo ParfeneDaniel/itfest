@@ -29,7 +29,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 25px;
-    border: 1px solid green;
+    align-items: stretch;
+    padding: 25px 15vw;
+    gap: 20px;
+}
+
+.left {
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }

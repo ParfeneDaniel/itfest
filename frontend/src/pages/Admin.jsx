@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Header from "../components/Header";
-import RequestCard from "../components/RequestCard";
+import RequestCard from "../components/AdminCard";
 import "../styles/selector.css";
 
 const Admin = () => {
   const [value, setValue] = useState("cereri");
   const requests = [
       {
-        name: "Bonchis",
+        name: "Cosmin Bonchis",
         email: "bonchis@e-uvt.ro",
-        university: "FMI",
+        university: "Facultatea de Matematică și Informatică, Universitatea de Vest Timișoara",
         details: "Colaboram?",
       },
       {
@@ -36,15 +36,17 @@ const Admin = () => {
     <div>
       <Header type="admin" />
       <div id="dashboard">
-        <div id="custom-select">
-          <select
-            className="selector"
-            name="selector"
-            onChange={() => setValue(event.target.value)}
-          >
-            <option value="cereri">Cereri</option>
-            <option value="facultati">Facultăți</option>
-          </select>
+        <div className="left">
+          <div id="custom-select">
+            <select
+              className="selector"
+              name="selector"
+              onChange={() => setValue(event.target.value)}
+            >
+              <option value="cereri">Cereri</option>
+              <option value="facultati">Facultăți</option>
+            </select>
+          </div>
         </div>
         {value === "cereri"
           ? requests.map((request, index) => {
