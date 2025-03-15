@@ -6,7 +6,8 @@
     justify-content: center;
 
     & .arrow-container,
-    & .pageNumber {
+    & .pageNumber,
+    & .selected {
         background-color: var(--background);
         border: 2px solid var(--primary);
         width: fit-content;
