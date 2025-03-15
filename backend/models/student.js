@@ -14,8 +14,12 @@ const studentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    group: {
+    yearName: {
       type: String,
+      required: true,
+    },
+    groupNumber: {
+      type: Number,
       required: true,
     },
     upVotes: {
