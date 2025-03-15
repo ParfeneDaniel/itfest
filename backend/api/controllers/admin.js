@@ -1,5 +1,10 @@
 const Request = require("../../models/request");
 const University = require("../../models/university");
+const createHeadmasterAccount = require("../../services/createHeadmaster");
+const sendEmail = require("../../services/sendEmail");
+const createHeadmasterEmail = require("../../data/createHeadmaster");
+const validateHeadmaster = require("../../data/validateHeadmaster");
+const rejectHeadmaster = require("../../data/rejectHeadmaster");
 
 const getRequests = async (req, res) => {
   const requests = await Request.find({});
@@ -23,9 +28,42 @@ const acceptRequest = async (req, res) => {
     email: request.email,
   });
 
-  
+  const newHeadmaster = createHeadmasterAccount(request.email);
 
-  await Promise.all([newUniversity.save()]);
+  await Promise.all([
+    newUniversity.save(),
+    newHeadmaster.save(),
+    sendEmail(
+      newHeadmaster.email,
+      ...createHeadmasterEmail(newHeadmaster.password)
+    ),
+  ]);
+
+  return res.status(201).json({ message: "Your request was accepted!" });
 };
 
-module.exports = { getRequests, getUniversities, acceptRequest };
+const rejectRequest = async (req, res) => {
+  const requestId = req.params.requestId;
+  const request = await Request.findByIdAndDelete(requestId);
+
+  await sendEmail(request.email, ...rejectHeadmaster());
+
+  return res.status(200).json({ message: "Your request was rejected!" });
+};
+
+const validateIdentity = async (req, res) => {
+  const requestId = req.params.requestId;
+  const request = await Request.findById(requestId);
+
+  await sendEmail(request.email, ...validateHeadmaster());
+
+  return res.status(200).json({ message: "Validation was send!" });
+};
+
+module.exports = {
+  getRequests,
+  getUniversities,
+  acceptRequest,
+  rejectRequest,
+  validateIdentity,
+};
