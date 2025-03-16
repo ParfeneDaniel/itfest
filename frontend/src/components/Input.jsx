@@ -4,7 +4,7 @@ const Input = (props) => {
   return props.type === "input" ? (
     <div className="input">
       <label>{props.label}</label>
-      <input defaultValue="" type={props.inputType} label={props.label} name={props.name}/>
+      <input  type={props.inputType} label={props.label} name={props.name}/>
     </div>
   ) : (
     <div className="textarea">

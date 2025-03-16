@@ -67,6 +67,7 @@ const Form = ({
             placeholder={input.placeholder}
             name={input.name}
             type={input.type}
+            inputType={input.inputType}
             key={index}
           />
         );

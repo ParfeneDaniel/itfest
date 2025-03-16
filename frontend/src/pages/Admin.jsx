@@ -18,8 +18,8 @@ const Admin = () => {
         .catch((e) => console.log(e));
     } else {
       axios
-        .get("admin/requests")
-        .then((r) => setUniversities(r.data.requests))
+        .get("admin/universities")
+        .then((r) => setUniversities(r.data.universities))
         .catch((e) => console.log(e));
     }
   }, [value]);
@@ -59,7 +59,7 @@ const Admin = () => {
                 <AdminCard
                   name={uni.headmasterName}
                   email={uni.email}
-                  university={uni.universityName}
+                  university={uni.name}
                   id={uni._id}
                   key={uni._id}
                 />
