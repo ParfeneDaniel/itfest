@@ -99,6 +99,11 @@ body {
   font-weight: 700;
 }
 
+.absolute {
+  position: absolute;
+  top: 5rem;
+}
+
 .gap {
   display: flex;
   flex-direction: column;
