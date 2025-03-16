@@ -106,31 +106,31 @@ const Leaderboard = () => {
               )}
             </div>
 
-            <div class="statistic-container">
-              <div class="div-container" style={{ height: height2 + "vh" }}>
+            <div className="statistic-container">
+              <div className="div-container" style={{ height: height2 + "vh" }}>
                 <p>2</p>
-                <div class="upvotes-container">
+                <div className="upvotes-container upvotes-top">
                   <p>{leaderboard[1].upvotes}</p>
-                  <i class="fa-solid fa-arrow-up"></i>
+                  <i className="fa-solid fa-arrow-up"></i>
                 </div>
               </div>
-              <div class="div-container">
+              <div className="div-container">
                 <p>1</p>
-                <div class="upvotes-container">
+                <div className="upvotes-container upvotes-top">
                   <p>{leaderboard[0].upvotes}</p>
-                  <i class="fa-solid fa-arrow-up"></i>
+                  <i className="fa-solid fa-arrow-up"></i>
                 </div>
               </div>
               <div
-                class="div-container"
+                className="div-container"
                 style={{
                   height: height3 + "vh",
                 }}
               >
                 <p>3</p>
-                <div class="upvotes-container">
+                <div className="upvotes-container upvotes-top">
                   <p>{leaderboard[2].upvotes}</p>
-                  <i class="fa-solid fa-arrow-up"></i>
+                  <i className="fa-solid fa-arrow-up"></i>
                 </div>
               </div>
             </div>

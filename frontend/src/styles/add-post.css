@@ -1,0 +1,32 @@
+.addPost-container {
+  width: 60%;
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  & label {
+    font-size: 2rem;
+    font-family: "Merriweather Sans", sans-serif;
+    color: var(--text);
+    padding: 1rem;
+  }
+
+  & textarea {
+    margin: 1rem;
+    height: 7rem;
+    resize: none;
+    padding: 0.2rem;
+    background-color: var(--primary-light);
+    border: 2px solid var(--text);
+    outline: none;
+    font-family: "Merriwheater Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  & button {
+    align-self: flex-end;
+    margin: 0 1rem 1rem 0;
+  }
+}

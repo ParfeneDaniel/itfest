@@ -1,0 +1,30 @@
+.group-select {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+
+    & .select {
+        width: 100%;
+        background-color: transparent;
+        appearance: none;
+        color: var(--text);
+        border: 2px solid var(--primary);
+        border-radius: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 1.5rem 0.5rem 0.8rem;
+        font-family: "Merriweather Sans", sans-serif;
+        font-size: 1rem;
+    }
+}
+
+.group-select::after {
+    content: '▼';
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text);
+}
