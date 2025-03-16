@@ -9,6 +9,7 @@ const studentSchema = mongoose.Schema(
     },
     name: {
       type: String,
+      default: "",
     },
     password: {
       type: String,
@@ -34,6 +35,10 @@ const studentSchema = mongoose.Schema(
     upVotes: {
       type: Number,
       default: 0,
+    },
+    details: {
+      type: String,
+      default: "",
     },
   },
   { timestamps: true }

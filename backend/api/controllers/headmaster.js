@@ -2,6 +2,7 @@ const Group = require("../../models/group");
 const Headmaster = require("../../models/headmaster");
 const Student = require("../../models/student");
 const createStudent = require("../../services/createStudent");
+const existResource = require("../../services/existResource");
 const crypto = required("crypto");
 
 const createYear = async (req, res) => {
@@ -50,10 +51,11 @@ const enrollStudents = async (req, res) => {
   const { emails } = req.body;
   const groupId = req.params.groupId;
   const group = await Group.findById(groupId);
+  existResource(group);
 
   for (const email of emails) {
     await createStudent(email, group.id, group.yearName, group.number);
-    group.studens.push(email);
+    group.students.push(email);
   }
 
   await group.save();
@@ -65,6 +67,7 @@ const addStudents = async (req, res) => {
   const { emails } = req.body;
   const groupId = req.params.groupId;
   const group = await Group.findById(groupId);
+  existResource(group);
 
   for (const email of emails) {
     const student = await Student.findOne({ email });
@@ -88,6 +91,8 @@ const deleteStudent = async (req, res) => {
     Group.findById(groupId),
     Student.findOne({ email }),
   ]);
+  existResource(group);
+  existResource(student);
 
   group.students = group.students.filter((student) => student != email);
 
@@ -108,4 +113,18 @@ const deleteStudent = async (req, res) => {
     .json({ message: "This student was deleted from this group" });
 };
 
-module.exports = { createYear, enrollStudents, addStudents, deleteStudent };
+const getStudents = async (req, res) => {
+  const groupId = req.params.groupId;
+  const group = await Group.findById(groupId);
+  existResource(group);
+
+  return res.status(200).json({ students: group.students });
+};
+
+module.exports = {
+  createYear,
+  enrollStudents,
+  addStudents,
+  deleteStudent,
+  getStudents,
+};
