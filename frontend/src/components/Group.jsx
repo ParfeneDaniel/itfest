@@ -1,4 +1,4 @@
-import Select from "./Select";
+import Select from "./GroupSelect";
 
 const Group = () => {
   const groups = [4, 7];

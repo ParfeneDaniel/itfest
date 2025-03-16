@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/leaderboard.css";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const Leaderboard = () => {
   const leaderboard = [
@@ -29,6 +31,13 @@ const Leaderboard = () => {
     <>
       <Header />
       <div id="dashboard" className="posts">
+        <div className="right absolute">
+          <Link to="/student" className="link">
+            <Button action="" type="filledButton roundedButton">
+              <i class="fa-solid fa-arrow-left"></i>
+            </Button>
+          </Link>
+        </div>
         <div id="leaderboard-container">
           <h1 className="leaderboard-title">Topul Lunii</h1>
           <div className="leaderboard-content">

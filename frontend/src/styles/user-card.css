@@ -1,105 +1,104 @@
 .user-card {
-    width: 60%;
-    background-color: var(--primary-light);
+  width: 100%;
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary);
+  padding: 2rem;
+  border-radius: 2rem;
+
+  & .user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .user-info i {
+    font-size: 8rem;
+    color: var(--text);
+    padding: 1.5rem;
+  }
+
+  & .info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & .info p {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text);
+    font-family: "Merriweather Sans", sans-serif;
+    padding: 0;
+  }
+
+  & .info p:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-top: 0.5rem;
+  }
+
+  & .content-container {
+    display: flex;
+  }
+
+  & .filed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
+  & .data-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  & .data-upvotes {
+    display: flex;
+    align-items: center;
+  }
+
+  & .data-upvotes p {
+    font-size: 1.2rem;
+    font-family: "Merriweather Sans", sans-serif;
+    color: var(--text);
+    padding: 1rem 0.2rem;
+  }
+
+  & .upvotes-container {
+    display: flex;
+    align-items: center;
+  }
+
+  & .upvotes-container i {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    padding: 1rem 0;
+  }
+
+  & .change-password {
+    background-color: transparent;
     border: 2px solid var(--primary);
-    padding: 2rem;
-    border-radius: 2rem;
+    color: var(--primary);
+    margin-top: 2rem;
+  }
 
-    & .user-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  & .change-password:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+  }
 
-    & .user-info i {
-        font-size: 8rem;
-        color: var(--text);
-        padding: 1.5rem;
-    }
+  & .button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
 
-    & .info {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    & .info p {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: var(--text);
-        font-family: "Merriweather Sans", sans-serif;
-        padding: 0;
-    }
-
-    & .info p:nth-child(2) {
-        font-size: 1.2rem;
-        font-weight: 500;
-        padding-top: 0.5rem;
-    }
-
-    & .content-container {
-        display: flex;
-    }
-
-    & .filed-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1;
-    }
-
-    & .data-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-    }
-
-    & .data-upvotes {
-        display: flex;
-        align-items: center;
-    }
-
-    & .data-upvotes p {
-        font-size: 1.2rem;
-        font-family: "Merriweather Sans", sans-serif;
-        color: var(--text);
-        padding: 1rem 0.2rem;
-    }
-
-    & .upvotes-container {
-        display: flex;
-        align-items: center;
-    }
-
-    & .upvotes-container i {
-        font-size: 1.2rem;
-        color: var(--secondary);
-        padding: 1rem 0;
-    }
-
-    & .change-password {
-        background-color: transparent;
-        border: 2px solid var(--primary);
-        color: var(--primary);
-        margin-top: 2rem;
-    }
-
-    & .change-password:hover {
-        background-color: var(--primary);
-        color: var(--text-light);
-    }
-
-    & .button-container {
-        display: flex;
-        justify-content: center;
-        padding-top: 1rem;
-    }
-
-    & .filledButton {
-        padding: 0.7rem 3rem;
-    }
-
+  & .filledButton {
+    padding: 0.7rem 3rem;
+  }
 }

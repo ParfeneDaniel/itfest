@@ -11,7 +11,7 @@ const Header = ({ type }) => {
         <LearniX size="big" />
       </p>
       {type === "student" && (
-        <i className="fa-solid fa-circle-user header-user"></i>
+        <Link to="/profile" className="link"><i className="fa-solid fa-circle-user header-user"></i></Link>
       )}
     </div>
   );

@@ -8,6 +8,7 @@ import DashboardStudent from "../pages/DashboardStudent";
 import DashboardFaculty from "../pages/DashboardFaculty";
 import Leaderboard from "../pages/Leaderboard";
 import CreatePost from "../pages/CreatePost";
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -45,5 +46,9 @@ export const router = createBrowserRouter([
     {
         path: "create",
         element: <CreatePost />
+    },
+    {
+        path: "profile",
+        element: <Profile />
     },
 ])
