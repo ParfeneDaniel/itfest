@@ -11,6 +11,8 @@ const {
   getStudent,
   getPosts,
   getComments,
+  requestTransfer,
+  getTransfers,
 } = require("../controllers/student");
 const validIds = require("../../middlewares/validIds");
 
@@ -26,6 +28,8 @@ router.post("/comment/:postId", tryCatch(createComment));
 router.get("/student/:studentId/:groupId", tryCatch(getStudent));
 router.get("/posts/:groupId/:subjectId", tryCatch(getPosts));
 router.get("/comments/:postId", tryCatch(getComments));
+router.post("/transfer", tryCatch(requestTransfer));
+router.get("/transfers", tryCatch(getTransfers));
 router.use(errorHandler);
 
-module.export = router;
+module.exports = router;

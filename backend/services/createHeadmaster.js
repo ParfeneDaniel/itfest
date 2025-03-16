@@ -5,7 +5,9 @@ const createHeadmasterAccount = async (email) => {
   const { password, hashedPassword } = createPassword();
   const newHeadmaster = new Headmaster({ email, password: hashedPassword });
 
-  return { newHeadmaster, password };
+  await newHeadmaster.save();
+
+  return password;
 };
 
 module.exports = createHeadmasterAccount;

@@ -1,14 +1,15 @@
 const Group = require("../../models/group");
 const Headmaster = require("../../models/headmaster");
 const Student = require("../../models/student");
+const Transfer = require("../../models/transfer");
 const createStudent = require("../../services/createStudent");
 const existResource = require("../../services/existResource");
-const crypto = required("crypto");
+const crypto = require("crypto");
 
 const createYear = async (req, res) => {
   const { name, groups, subjects } = req.body;
-  const userId = req.user.id;
-  const headmaster = await Headmaster.findById(userId);
+  const headmasterId = req.user.id;
+  const headmaster = await Headmaster.findById(headmasterId);
 
   const yearGroups = [];
   const yearSubjects = [];
@@ -22,6 +23,7 @@ const createYear = async (req, res) => {
 
   for (let i = 1; i <= groups; ++i) {
     const group = new Group({
+      headmasterId,
       yearName: name,
       number: i,
       subjects: yearSubjects,
@@ -121,10 +123,64 @@ const getStudents = async (req, res) => {
   return res.status(200).json({ students: group.students });
 };
 
+const acceptTransfer = async (req, res) => {
+  const transferId = req.params.transferId;
+  const headmasterId = req.user.id;
+  const [transfer, headmaster] = await Promise.all([
+    Transfer.findById(transferId),
+    Headmaster.findById(headmasterId),
+  ]);
+  existResource(transferId);
+
+  for (const year of headmaster.years) {
+    if (year.name == transfer.yearName) {
+      for (const gr of year.groups) {
+        if (gr.number == transfer.groupNumber) {
+          const [group, student] = await Promise.all([
+            Group.findById(gr.id),
+            Student.findOne({ email: transfer.email }),
+          ]);
+          group.student.push(transfer.email);
+          student.group.push({ id: group._id, number: groupNumber });
+
+          await Promise.all([
+            group.save(),
+            student.save(),
+            Transfer.findByIdAndDelete(transferId),
+          ]);
+        }
+      }
+      break;
+    }
+  }
+
+  return res.status(200).json({ message: "You were added in that group" });
+};
+
+const rejectTransfer = async (req, res) => {
+  const transferId = req.params.transferId;
+  await Transfer.findByIdAndDelete(transferId);
+
+  return res.status(200).json({ message: "You were added in that group" });
+};
+
+const getTransfers = async (req, res) => {
+  const yearName = req.params.yearName;
+  const headmasterId = req.user.id;
+  const transfers = await Transfer.find({
+    $and: [{ headmasterId }, { yearName }],
+  });
+
+  return res.status(200).json({ transfers });
+};
+
 module.exports = {
   createYear,
   enrollStudents,
   addStudents,
   deleteStudent,
   getStudents,
+  acceptTransfer,
+  rejectTransfer,
+  getTransfers,
 };

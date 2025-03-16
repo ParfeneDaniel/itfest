@@ -10,7 +10,6 @@ const headmasterSchema = mongoose.Schema(
     password: {
       type: String,
       required: true,
-      unique: true,
     },
     years: [
       {
