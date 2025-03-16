@@ -24,11 +24,11 @@
   }
 
   & .icon::before {
-    content: "v";
+    content: "^";
   }
 
   & .selected::before {
-    content: "^";
+    content: "v";
   }
 
   & .selected {
