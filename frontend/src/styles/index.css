@@ -17,6 +17,7 @@
   --text: #1e2429;
   --text-light: #fbf8ef;
   --border: #d0d0d0;
+  --subtext: rgb(130, 130, 130);
 }
 
 body {
@@ -27,7 +28,7 @@ body {
   flex-direction: column;
   height: 100vh;
   max-width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #dashboard {
@@ -54,6 +55,12 @@ body {
   justify-content: end;
 }
 
+.right {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -61,6 +68,11 @@ body {
 
 .center {
   justify-content: center;
+  align-items: center;
+}
+
+
+.center-h {
   align-items: center;
 }
 
@@ -76,4 +88,13 @@ body {
     cursor: pointer;
     user-select: none;
   }
+}
+
+.w100 {
+  width: 100%;
+}
+
+.bigText {
+  font-size: 2.5rem;
+  font-weight: 700;
 }

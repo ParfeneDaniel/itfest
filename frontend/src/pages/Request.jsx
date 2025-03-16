@@ -25,7 +25,7 @@ const Request = () => {
     button = {
       acion: "",
       text: "Trimite cerere",
-      type: "filledButton",
+      type: "filledButton medium",
     };
 
   return (

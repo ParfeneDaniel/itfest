@@ -15,25 +15,21 @@ const DashboardStudent = () => {
   // const posts = [];
   const posts = [
     {
-      title: "Ajutor",
       post: "Ex 3 de la tema doi va rog frumos",
       autor: "Marin Sorescu",
       time: "3:30",
     },
     {
-      title: "Muie Chis",
       post: "%#$^#!&(!#@&%!#&%!#&*!Y*#!)#&^*#!#$~!#$%~#$%!$^!%&!#^&^*!#&^ mama lui de &^#@%#@^#%!@&*(!@^*(Q#^*Q#^*Q#&^*&",
       autor: "Bogdan",
       time: "3:40",
     },
     {
-      title: "Cine stie sa faca tema",
       post: "eu nu",
       autor: "Constantin",
       time: "3:10",
     },
     {
-      title: "MA LAS",
       post: "De ce exista matematica????",
       autor: "dodo",
       time: "1:00",
@@ -54,11 +50,13 @@ const DashboardStudent = () => {
           setSelected={setSelectedSubject}
         />
         <div id="dashboard" className="posts">
-          <div className="flex-row center">
+          <div className="flex-row center w100">
             <Searchbar setValue={setSearchBarValue} />
-            <Button type="roundedButton">
-              <i class="fa-solid fa-plus" />
-            </Button>
+            <Link className="link" to="/create">
+              <Button type="roundedButton">
+                <i class="fa-solid fa-plus" />
+              </Button>
+            </Link>
             <Link to="/leaderboard" className="link">
               <Button type="roundedButton">
                 <i class="fa-solid fa-trophy" />

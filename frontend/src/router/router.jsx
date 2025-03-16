@@ -7,6 +7,7 @@ import Post from "../pages/Post";
 import DashboardStudent from "../pages/DashboardStudent";
 import DashboardFaculty from "../pages/DashboardFaculty";
 import Leaderboard from "../pages/Leaderboard";
+import CreatePost from "../pages/CreatePost";
 
 export const router = createBrowserRouter([
     {
@@ -14,19 +15,19 @@ export const router = createBrowserRouter([
         element: <Landing />
     },
     {
-        path: "request",
+        path: "/request",
         element: <Request />
     },
     {
-        path: "login",
+        path: "/login",
         element: <Login />
     },
     {
-        path: "admin",
+        path: "/admin",
         element: <Admin />
     },
     {
-        path: "post",
+        path: "/post",
         element: <Post />
     },
     {
@@ -34,11 +35,15 @@ export const router = createBrowserRouter([
         element: <DashboardStudent />
     },
     {
-        path: "decan",
+        path: "/decan",
         element: <DashboardFaculty />
     },
     {
         path: "leaderboard",
         element: <Leaderboard />
+    },
+    {
+        path: "create",
+        element: <CreatePost />
     },
 ])
