@@ -7,12 +7,21 @@ const postSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
+    groupId: {
+      type: mongoose.Types.Schema.ObjectId,
+      ref: "Group",
+      required: true,
+    },
+    groupNumber: {
+      type: Number,
+      required: true,
+    },
     creatorId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    creatorName: {
+    creatorEmail: {
       type: String,
       required: true,
     },

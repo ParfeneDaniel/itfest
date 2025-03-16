@@ -5,6 +5,7 @@ const sendEmail = require("../../services/sendEmail");
 const createHeadmasterEmail = require("../../data/createHeadmaster");
 const validateHeadmaster = require("../../data/validateHeadmaster");
 const rejectHeadmaster = require("../../data/rejectHeadmaster");
+const existResource = require("../../services/existResource");
 
 const getRequests = async (req, res) => {
   const requests = await Request.find({});
@@ -21,6 +22,7 @@ const getUniversities = async (req, res) => {
 const acceptRequest = async (req, res) => {
   const requestId = req.params.requestId;
   const request = await Request.findByIdAndDelete(requestId);
+  existResource(request);
 
   const newUniversity = new University({
     name: request.universityName,
@@ -42,6 +44,7 @@ const acceptRequest = async (req, res) => {
 const rejectRequest = async (req, res) => {
   const requestId = req.params.requestId;
   const request = await Request.findByIdAndDelete(requestId);
+  existResource(request);
 
   await sendEmail(request.email, ...rejectHeadmaster());
 
@@ -51,6 +54,7 @@ const rejectRequest = async (req, res) => {
 const validateIdentity = async (req, res) => {
   const requestId = req.params.requestId;
   const request = await Request.findById(requestId);
+  existResource(request);
 
   await sendEmail(request.email, ...validateHeadmaster());
 

@@ -7,6 +7,7 @@ const {
   enrollStudents,
   addStudents,
   deleteStudent,
+  getStudents,
 } = require("../controllers/headmaster");
 const validIds = require("../../middlewares/validIds");
 
@@ -18,6 +19,7 @@ router.post("/year", tryCatch(createYear));
 router.post("/enroll-students/:groupId", tryCatch(enrollStudents));
 router.post("/add-students/:groupId", tryCatch(addStudents));
 router.delete("/student/:groupId/:studentEmail", tryCatch(deleteStudent));
+router.get("/students/:groupId", tryCatch(getStudents));
 router.use(errorHandler);
 
 module.exports = router;

@@ -12,7 +12,7 @@ const commentSchema = mongoose.Schema(
       ref: "User",
       required: true,
     },
-    creatorName: {
+    creatorEmail: {
       type: String,
       required: true,
     },

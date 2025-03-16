@@ -19,7 +19,11 @@ const login = async (req, res) => {
   } else if (type == "student") {
     const student = await Student.findOne({ email });
     correctPassword(password, student.password);
-    generateToken(student._id, "student", res);
+    generateToken(student._id, "student", res, email, student.groups);
+
+    return res
+      .status(200)
+      .json({ message: "You are logged in", groups: student.groups });
   }
 
   return res.status(200).json({ message: "You are logged in" });
