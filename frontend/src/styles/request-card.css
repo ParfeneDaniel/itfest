@@ -1,12 +1,14 @@
 .request-card {
     border: 2px solid var(--primary);
     font-size: 1.3rem;
-    padding: 25px;
+    padding: 50px;
     background-color: var(--primary-light);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    text-align: justify;
 
     & .field-name {
         font-weight: 700;
@@ -23,7 +25,7 @@
         text-decoration-color: var(--secondary);
     }
 
-    & h2, & h1 {
+    & h2, & h3 {
         display: inline;
     }
 }

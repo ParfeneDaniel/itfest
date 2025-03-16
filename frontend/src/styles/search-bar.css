@@ -3,6 +3,7 @@
     width: 50rem;
     
     & .search-bar-input {
+        margin: 0;
         width: 50rem;
         padding: 1rem 2rem;
         background-color: transparent;

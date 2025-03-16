@@ -1,0 +1,61 @@
+.pageSelector-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .arrow-container,
+    & .pageNumber,
+    & .selected {
+        background-color: var(--background);
+        border: 2px solid var(--primary);
+        width: fit-content;
+        height: fit-content;
+        margin: 0 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    & .selected {
+        background-color: var(--primary);
+    }
+
+    & .arrow-container:hover {
+        background-color: var(--primary);
+    }
+
+    & .arrow-container {
+        border-radius: 2rem;
+    }
+
+    & .arrow-container i,
+    & .pageNumber p {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        color: var(--text);
+    }
+
+    & .arrow-container i {
+        padding: 0.6rem;
+    }
+
+    & .pageNumber p {
+        font-weight: bold;
+        font-family: "Merriweather Sans", sans-serif;
+    }
+
+    & .dots-container {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    & .dots-container i {
+        color: var(--border);
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+
+}

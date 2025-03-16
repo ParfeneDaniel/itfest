@@ -1,0 +1,54 @@
+.add-card {
+  width: 60%;
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  & h1 {
+    font-size: 2rem;
+    font-family: "Merriweather Sans", sans-serif;
+    padding: 1.5rem;
+  }
+
+  & .group-select {
+    margin: 0 0 1rem 1rem;
+  }
+
+  & .add-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & label {
+    font-size: 1rem;
+    font-family: "Merriweather Sans", sans-serif;
+    margin-left: 1rem;
+    color: var(--text);
+  }
+
+  & p {
+    font-size: 0.8rem;
+    font-family: "Merriweather Sans", sans-serif;
+    padding-top: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  & textarea {
+    margin: 1rem;
+    height: 7rem;
+    resize: none;
+    padding: 0.2rem;
+    background-color: var(--primary-light);
+    border: 2px solid var(--text);
+    outline: none;
+    font-family: "Merriwheater Sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  & button {
+    align-self: flex-end;
+    margin: 0 1rem 1rem 0;
+  }
+}
