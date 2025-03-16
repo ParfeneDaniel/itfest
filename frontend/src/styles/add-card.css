@@ -1,10 +1,12 @@
 .add-card {
-  width: 60%;
+  width: 100%;
   background-color: var(--primary-light);
   border: 2px solid var(--primary);
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  padding: 30px;
 
   & h1 {
     font-size: 2rem;
@@ -24,7 +26,6 @@
   & label {
     font-size: 1rem;
     font-family: "Merriweather Sans", sans-serif;
-    margin-left: 1rem;
     color: var(--text);
   }
 
@@ -33,18 +34,20 @@
     font-family: "Merriweather Sans", sans-serif;
     padding-top: 0.5rem;
     margin-left: 1rem;
+    color: var(--subtext);
   }
 
   & textarea {
-    margin: 1rem;
-    height: 7rem;
-    resize: none;
+    min-height: 7rem;
     padding: 0.2rem;
     background-color: var(--primary-light);
     border: 2px solid var(--text);
     outline: none;
     font-family: "Merriwheater Sans", sans-serif;
     font-size: 1rem;
+    width: 100%;
+    margin-top: 10px;
+    max-height: 20rem;
   }
 
   & button {

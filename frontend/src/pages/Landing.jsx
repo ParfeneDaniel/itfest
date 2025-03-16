@@ -17,10 +17,10 @@ const Landing = () => {
         </div>
         <div>
           <Link to="/request">
-            <Button text="Trimite cerere" action="" type="filledButton" />
+            <Button action="" type="filledButton medium">Trimite cerere</Button>
           </Link>
           <Link to="/login">
-            <Button text="Conectează-te" action="" type="filledButton" />
+            <Button action="" type="filledButton medium">Conectează-te</Button>
           </Link>
         </div>
       </div>

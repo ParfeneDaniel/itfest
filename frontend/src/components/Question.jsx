@@ -7,10 +7,10 @@ const Question = (props) => {
     <div className="question">
       <div className="question-header">
         <div className="question-header-user">
-          <i class="fas fa-circle-user" />
+          <i className="fas fa-circle-user"/>
           <p>{props.autor}</p>
         </div>
-        <p>{props.time}</p>
+        <span>{props.time}</span>
       </div>
       <div className="question-content">
         <p>

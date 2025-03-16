@@ -17,6 +17,7 @@
   --text: #1e2429;
   --text-light: #fbf8ef;
   --border: #d0d0d0;
+  --subtext: rgb(130, 130, 130);
 }
 
 body {
@@ -27,7 +28,7 @@ body {
   flex-direction: column;
   height: 100vh;
   max-width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #dashboard {
@@ -76,4 +77,8 @@ body {
     cursor: pointer;
     user-select: none;
   }
+}
+
+.w100 {
+  width: 100%;
 }

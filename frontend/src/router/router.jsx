@@ -7,6 +7,7 @@ import Post from "../pages/Post";
 import DashboardStudent from "../pages/DashboardStudent";
 import DashboardFaculty from "../pages/DashboardFaculty";
 import Leaderboard from "../pages/Leaderboard";
+import CreatePost from "../pages/CreatePost";
 
 export const router = createBrowserRouter([
     {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
     {
         path: "leaderboard",
         element: <Leaderboard />
+    },
+    {
+        path: "create",
+        element: <CreatePost />
     },
 ])

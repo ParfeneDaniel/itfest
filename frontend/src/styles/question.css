@@ -4,6 +4,7 @@
     padding: 2rem;
     border: 0.2rem solid var(--primary);
     border-radius: 0.5rem;
+    font-family: 'Merriweather Sans';
     display: flex;
     flex-direction: column;
 
@@ -24,7 +25,12 @@
 
     & .question-header-user p {
         font-size: 1.5rem;
+        font-weight: 700;
         padding: 0 1rem;
+    }
+
+    & .question-header span {
+        font-size: .9rem;
     }
     
     & .question-header > p {
@@ -33,8 +39,9 @@
     }
 
     & .question-content {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 3rem 0 0 1rem;
+        font-weight: 400;
     }
 
     & .btn-container {
