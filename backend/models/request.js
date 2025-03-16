@@ -19,6 +19,10 @@ const requestSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    validation: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

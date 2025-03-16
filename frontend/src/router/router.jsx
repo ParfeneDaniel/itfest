@@ -15,19 +15,19 @@ export const router = createBrowserRouter([
         element: <Landing />
     },
     {
-        path: "request",
+        path: "/request",
         element: <Request />
     },
     {
-        path: "login",
+        path: "/login",
         element: <Login />
     },
     {
-        path: "admin",
+        path: "/admin",
         element: <Admin />
     },
     {
-        path: "post",
+        path: "/post",
         element: <Post />
     },
     {
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         element: <DashboardStudent />
     },
     {
-        path: "decan",
+        path: "/decan",
         element: <DashboardFaculty />
     },
     {

@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const groupSchema = mongoose.Schema(
   {
+    headmasterId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Headmaster",
+      required: true,
+    },
     yearName: {
       type: String,
       required: true,

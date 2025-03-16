@@ -14,7 +14,11 @@ const createStudent = async (email, id, year, number) => {
 
   await Promise.all([
     student.save(),
-    sendEmail(email, ...createStudentAccount(password)),
+    sendEmail(
+      email,
+      createStudentAccount(password).subject,
+      createStudentAccount(password).html
+    ),
   ]);
 };
 

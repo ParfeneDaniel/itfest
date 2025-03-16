@@ -8,7 +8,7 @@ const postSchema = mongoose.Schema(
       unique: true,
     },
     groupId: {
-      type: mongoose.Types.Schema.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Group",
       required: true,
     },

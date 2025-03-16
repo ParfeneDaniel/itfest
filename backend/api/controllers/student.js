@@ -1,8 +1,10 @@
+const BadRequest = require("../../errors/BadRequest");
 const Forbidden = require("../../errors/Forbidden");
 const Comment = require("../../models/comments");
 const Group = require("../../models/group");
 const Post = require("../../models/post");
 const Student = require("../../models/student");
+const Transfer = require("../../models/transfer");
 const existResource = require("../../services/existResource");
 
 const limit = 10;
@@ -184,6 +186,41 @@ const getComments = async (req, res) => {
   return res.status(200).json({ comments });
 };
 
+const requestTransfer = async (req, res) => {
+  const { email, groups } = req.user;
+  const { groupNumber } = req.body;
+
+  if (groups.find((group) => group.number == groupNumber)) {
+    throw new BadRequest(
+      "You already are is this group",
+      "Fell free to start helping others!"
+    );
+  }
+
+  const group = await Group.findById(groups[0].id);
+
+  const transfer = new Transfer({
+    headmasterId: group.headmasterId,
+    yearName: group.yearName,
+    groupNumber,
+    email,
+  });
+
+  await transfer.save();
+
+  return res
+    .status(200)
+    .json({ message: "You request for adding in another group was send!" });
+};
+
+const getTransfers = async (req, res) => {
+  const email = req.user.email;
+
+  const transfers = await Transfer.find({ email });
+
+  return res.status(200).json({ transfers });
+};
+
 module.exports = {
   createPost,
   getGroups,
@@ -193,4 +230,6 @@ module.exports = {
   getStudent,
   getPosts,
   getComments,
+  requestTransfer,
+  getTransfers,
 };

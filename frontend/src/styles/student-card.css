@@ -1,7 +1,7 @@
 .studentCard {
     width: 100%;
     background-color: var(--primary-light);
-    border: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -8,6 +8,9 @@ const {
   addStudents,
   deleteStudent,
   getStudents,
+  getTransfers,
+  acceptTransfer,
+  rejectTransfer,
 } = require("../controllers/headmaster");
 const validIds = require("../../middlewares/validIds");
 
@@ -20,6 +23,9 @@ router.post("/enroll-students/:groupId", tryCatch(enrollStudents));
 router.post("/add-students/:groupId", tryCatch(addStudents));
 router.delete("/student/:groupId/:studentEmail", tryCatch(deleteStudent));
 router.get("/students/:groupId", tryCatch(getStudents));
+router.post("/transfer/:transferId", tryCatch(acceptTransfer));
+router.delete("/transfer/:transferId", tryCatch(rejectTransfer));
+router.get("/transfers/:yearName", tryCatch(getTransfers));
 router.use(errorHandler);
 
 module.exports = router;

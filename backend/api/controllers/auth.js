@@ -29,4 +29,8 @@ const login = async (req, res) => {
   return res.status(200).json({ message: "You are logged in" });
 };
 
-module.exports = { login };
+const changePassword = async (req, res) => {
+
+}
+
+module.exports = { login, changePassword };

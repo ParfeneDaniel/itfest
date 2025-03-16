@@ -2,18 +2,20 @@ const BadRequest = require("../errors/BadRequest");
 const ObjectId = require("mongoose").Types.ObjectId;
 
 const validIds = (req, res, next) => {
-  try {
-    const ids = req.params;
-    for (const id of ids) {
-      if (id.include("Id")) {
-        if (!(ObjectId.isValid(id) && String(new ObjectId(id)) === id)) {
-          throw new BadRequest("Your ids are not valid");
-        }
-      }
+  const params = req.params;
+
+  for (const param in params) {
+    if (
+      !(
+        ObjectId.isValid(params[param]) &&
+        String(new ObjectId(params[param]) === params[param])
+      )
+    ) {
+      next(new BadRequest("Your ids are not valid"));
     }
-  } catch (error) {
-    return next(error);
   }
+
+  next();
 };
 
 module.exports = validIds;

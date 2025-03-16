@@ -55,6 +55,12 @@ body {
   justify-content: end;
 }
 
+.right {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -62,6 +68,11 @@ body {
 
 .center {
   justify-content: center;
+  align-items: center;
+}
+
+
+.center-h {
   align-items: center;
 }
 
@@ -81,4 +92,9 @@ body {
 
 .w100 {
   width: 100%;
+}
+
+.bigText {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
