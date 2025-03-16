@@ -16,8 +16,8 @@ const createStudent = async (email, id, year, number) => {
     student.save(),
     sendEmail(
       email,
-      createStudentAccount(password).subject,
-      createStudentAccount(password).html
+      createStudentAccount(number, password).subject,
+      createStudentAccount(number, password).html
     ),
   ]);
 };

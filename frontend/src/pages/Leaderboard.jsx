@@ -7,20 +7,20 @@ import Button from "../components/Button";
 const Leaderboard = () => {
   const leaderboard = [
     {
-      name: "Parfene Daniel",
-      upvotes: 10,
+      name: "Ana Popescu",
+      upvotes: 23,
     },
     {
-      name: "Grozav Maya",
+      name: "Mihai Pop",
+      upvotes: 18,
+    },
+    {
+      name: "Maria Popa",
+      upvotes: 8,
+    },
+    {
+      name: "Julia Anescu",
       upvotes: 5,
-    },
-    {
-      name: "Fraieru fraierilor",
-      upvotes: 1,
-    },
-    {
-      name: "Cum Supărare",
-      upvotes: -1,
       place: 12,
     },
   ];

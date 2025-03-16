@@ -15,26 +15,12 @@ const Form = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.target);
 
-    const data = inputs.reduce((acc, input) => {
-      const value = formData.get(input.name);
-
-      let parsedValue;
-      switch (input.types) {
-        case "number":
-          parsedValue = value ? Number(value) : 0;
-          break;
-        case "boolean":
-          parsedValue = value === "on" || value === "true";
-          break;
-        default:
-          parsedValue = value?.toString() || "";
-      }
-
-      return { ...acc, [input.name]: parsedValue };
-    }, {});
-
+    const data = Object.fromEntries(formData.entries());
+    {
+      type === "tab" && (data["type"] = selectedValue);
+    }
     onSubmit(data);
   };
 
@@ -45,16 +31,17 @@ const Form = ({
           <div
             onClick={() => setSelectedValue("student")}
             className={
-              "pointer choice " + (selectedValue == "student" ? "choice-selected" : "")
+              "pointer choice " +
+              (selectedValue == "student" ? "choice-selected" : "")
             }
           >
             Student
           </div>
           <div
-            onClick={() => setSelectedValue("facultate")}
+            onClick={() => setSelectedValue("headmaster")}
             className={
               "pointer choice " +
-              (selectedValue == "facultate" ? "choice-selected" : "")
+              (selectedValue == "headmaster" ? "choice-selected" : "")
             }
           >
             Facultate
@@ -62,14 +49,15 @@ const Form = ({
           <div
             onClick={() => setSelectedValue("admin")}
             className={
-              "pointer choice " + (selectedValue == "admin" ? "choice-selected" : "")
+              "pointer choice " +
+              (selectedValue == "admin" ? "choice-selected" : "")
             }
           >
             Admin
           </div>
         </div>
       )}
-      <h1 class="form-title">
+      <h1 className="form-title">
         {type === "tab" ? title + " " + selectedValue : title}
       </h1>
       {inputs.map((input, index) => {
@@ -77,14 +65,14 @@ const Form = ({
           <Input
             label={input.label}
             placeholder={input.placeholder}
+            name={input.name}
             type={input.type}
+            inputType={input.inputType}
             key={index}
           />
         );
       })}
-      <Button type={button.type} action={button.action}>
-        {button.text}
-      </Button>
+      <Button type={button.type}>{button.text}</Button>
     </form>
   );
 };

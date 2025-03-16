@@ -11,8 +11,24 @@ import Button from "../components/Button";
 const DashboardFaculty = () => {
   const [selected, setSelected] = useState("Grupe");
   const [openedGroup, setOpenedGroup] = useState("");
+  const [addStudent, setAddStudent] = useState(false);
 
-  const groups = ["IR1", "IR2", "IR3", "AI1", "IE2"];
+  const groups = [
+    "IR1",
+    "IR2",
+    "IR3",
+    "AI1",
+    "IE2",
+    "IR2",
+    "IR3",
+    "AI1",
+    "IE2",
+  ];
+  const groups2 = [
+    { number: 1, students: ["Ana", "Ana"] },
+    { number: 2, students: ["Poco", "Poco", "Poco"] },
+    { number: 3, students: ["Ana", "Poco", "Ana"] },
+  ];
   return (
     <>
       <Header />
@@ -31,8 +47,21 @@ const DashboardFaculty = () => {
               <h1 className="bigText">{openedGroup}</h1>
             </div>
           )}
-          {openedGroup === ""
-            ? groups.map((name, index) => {
+          {addStudent && (
+            <div className="right center-h">
+              <Button type="roundedButton" action={() => setAddStudent(false)}>
+                <i class="fa-solid fa-arrow-left"></i>
+              </Button>
+              <h1 className="bigText">{openedGroup}</h1>
+            </div>
+          )}
+          {openedGroup === "" && !addStudent ? (
+            <div className="w100 gap">
+              <div className="left">
+              <Button type="filledButton medium">Adaugă persoane</Button>
+              <Button type="filledButton medium">Creează consturi</Button>
+              </div>
+              {groups.map((name, index) => {
                 return (
                   <HeadmasterCard
                     name={name}
@@ -40,13 +69,16 @@ const DashboardFaculty = () => {
                     action={() => setOpenedGroup(name)}
                   />
                 );
-              })
-            : (
-              <GroupCard number={3} students={["Ana", "Maya", "Daniel"]}/>
-            )}
+              })}
+            </div>
+          ) : (
+            groups2.map((group, index) => {
+              return (
+                <GroupCard number={group.number} students={group.students} />
+              );
+            })
+          )}
           {/* <AddStudentCard />
-          <GroupCard number={3} />
-          <StudentCard email="maya.grozav06@e-uvt.ro" />
           <AddPostCard /> */}
         </div>
       </div>

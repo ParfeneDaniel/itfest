@@ -15,12 +15,12 @@ const DashboardStudent = () => {
   // const posts = [];
   const posts = [
     {
-      post: "Ex 3 de la tema doi va rog frumos",
-      autor: "Marin Sorescu",
-      time: "3:30",
+      post: "Mă puteți ajuta vă rog la capitolul 4? Nu reușesc să înțeleg listele simplu înlănțuite",
+      autor: "Ana Popescu",
+      time: "14:53",
     },
     {
-      post: "%#$^#!&(!#@&%!#&%!#&*!Y*#!)#&^*#!#$~!#$%~#$%!$^!%&!#^&^*!#&^ mama lui de &^#@%#@^#%!@&*(!@^*(Q#^*Q#^*Q#&^*&",
+      post: "",
       autor: "Bogdan",
       time: "3:40",
     },

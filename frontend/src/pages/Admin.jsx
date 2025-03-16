@@ -1,40 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import RequestCard from "../components/AdminCard";
+import AdminCard from "../components/AdminCard";
 import "../styles/selector.css";
 import Leaderboard from "./Leaderboard";
+import axios from "../../api/axios";
 
 const Admin = () => {
   const [value, setValue] = useState("cereri");
-  const requests = [
-      {
-        name: "Cosmin Bonchis",
-        email: "bonchis@e-uvt.ro",
-        university:
-          "Facultatea de Matematică și Informatică, Universitatea de Vest Timișoara",
-        details:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere eligendi repellendus minus vel veritatis saepe recusandae quibusdam, dignissimos quos distinctio id, modi enim ut eveniet numquam suscipit. Repellat, harum!",
-      },
-      {
-        name: "Ana",
-        email: "ana@e-uvt.ro",
-        university: "FEEA",
-        details: "Colaboram si noi?",
-      },
-    ],
-    faculties = [
-      {
-        name: "Maria",
-        email: "maria@e-uvt.ro",
-        university: "UVT",
-      },
-      {
-        name: "Maya",
-        email: "maya@e-uvt.ro",
-        university: "UBB",
-      },
-    ];
+  const [requests, setRequests] = useState([]);
+  const [universities, setUniversities] = useState([]);
 
+  useEffect(() => {
+    if (value === "cereri") {
+      axios
+        .get("admin/requests")
+        .then((r) => setRequests(r.data.requests))
+        .catch((e) => console.log(e));
+    } else {
+      axios
+        .get("admin/universities")
+        .then((r) => setUniversities(r.data.universities))
+        .catch((e) => console.log(e));
+    }
+  }, [value]);
+  console.log(requests);
+  console.log(universities);
   return (
     <div>
       <Header type="admin" />
@@ -52,24 +42,26 @@ const Admin = () => {
           </div>
         </div>
         {value === "cereri"
-          ? requests.map((request, index) => {
+          ? requests.map((request) => {
               return (
-                <RequestCard
-                  name={request.name}
+                <AdminCard
+                  name={request.headmasterName}
                   email={request.email}
-                  university={request.university}
-                  details={request.details}
-                  key={index}
+                  university={request.universityName}
+                  details={request.description}
+                  id={request._id}
+                  key={request._id}
                 />
               );
             })
-          : faculties.map((request, index) => {
+          : universities.map((uni) => {
               return (
-                <RequestCard
-                  name={request.name}
-                  email={request.email}
-                  university={request.university}
-                  key={index}
+                <AdminCard
+                  name={uni.headmasterName}
+                  email={uni.email}
+                  university={uni.name}
+                  id={uni._id}
+                  key={uni._id}
                 />
               );
             })}

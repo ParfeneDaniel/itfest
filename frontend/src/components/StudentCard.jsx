@@ -1,13 +1,13 @@
-import '../styles/student-card.css'
-import Button from './Button';
+import "../styles/student-card.css";
+import Button from "./Button";
 
-const StudentCard = ({children}) => {
+const StudentCard = ({ children }) => {
   return (
-    <div className='studentCard'>
-        <p className='student-email'>{children}</p>
-        <Button type="filledButton medium" action="" >Șterge</Button>
+    <div className="studentCard">
+      <p className="student-email">{children}</p>
+      <Button type="filledButton medium">Șterge</Button>
     </div>
-  )
-}
+  );
+};
 
 export default StudentCard;

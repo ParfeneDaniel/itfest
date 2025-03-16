@@ -1,7 +1,30 @@
+import axios from "../../api/axios";
 import "../styles/request-card.css";
 import Button from "./Button";
 
 const AdminCard = (props) => {
+  console.log(props);
+
+  const validateRequest = () => {
+    axios
+      .post(`admin/validate/${props.id}`)
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+  };
+
+  const deleteRequest = () => {
+    axios
+      .delete(`admin/request/${props.id}`)
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+  };
+
+  const acceptRequest = () => {
+    axios
+      .post(`admin/request/${props.id}`)
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+  };
   return (
     <div className="request-card">
       <span>
@@ -18,15 +41,9 @@ const AdminCard = (props) => {
             <span>{props.details}</span>
           </span>
           <span className="left">
-            <Button type="filledButton medium" action="">
-              Verifică
-            </Button>
-            <Button type="filledButton medium" action="">
-              Refuză
-            </Button>
-            <Button type="filledButton medium" action="">
-              Acceptă
-            </Button>
+            <Button type="filledButton medium" action={validateRequest}>Verifică</Button>
+            <Button type="filledButton medium" action={deleteRequest}>Refuză</Button>
+            <Button type="filledButton medium"action={acceptRequest}>Acceptă</Button>
           </span>
         </>
       )}
