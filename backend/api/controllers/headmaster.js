@@ -76,6 +76,7 @@ const addStudents = async (req, res) => {
     if (student) {
       group.students.push(email);
       student.groups.push({ id: group._id, number: group.number });
+      await student.save();
     }
   }
 

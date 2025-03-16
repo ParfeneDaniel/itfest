@@ -18,14 +18,14 @@ const router = Router();
 
 router.use(authorization("headmaster"));
 router.use(validIds);
-router.post("/year", tryCatch(createYear));
-router.post("/enroll-students/:groupId", tryCatch(enrollStudents));
-router.post("/add-students/:groupId", tryCatch(addStudents));
-router.delete("/student/:groupId/:studentEmail", tryCatch(deleteStudent));
-router.get("/students/:groupId", tryCatch(getStudents));
-router.post("/transfer/:transferId", tryCatch(acceptTransfer));
-router.delete("/transfer/:transferId", tryCatch(rejectTransfer));
-router.get("/transfers/:yearName", tryCatch(getTransfers));
+router.post("/year", tryCatch(createYear)); // ✅ 
+router.post("/enroll-students/:groupId", tryCatch(enrollStudents)); // ✅
+router.post("/add-students/:groupId", tryCatch(addStudents)); // ✅
+router.delete("/student/:groupId/:studentEmail", tryCatch(deleteStudent)); //
+router.get("/students/:groupId", tryCatch(getStudents)); //
+router.post("/transfer/:transferId", tryCatch(acceptTransfer)); //
+router.delete("/transfer/:transferId", tryCatch(rejectTransfer)); //
+router.get("/transfers/:yearName", tryCatch(getTransfers)); // 
 router.use(errorHandler);
 
 module.exports = router;
