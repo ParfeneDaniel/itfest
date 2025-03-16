@@ -98,3 +98,9 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
 }
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

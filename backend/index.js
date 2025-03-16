@@ -14,6 +14,6 @@ app.use("/", router);
 
 app.listen(3001, async () => {
   console.log("Server is running");
-  await connectToRedis();
+  // await connectToRedis();
   await connectToMongoDB();
 });

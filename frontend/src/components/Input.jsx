@@ -4,12 +4,12 @@ const Input = (props) => {
   return props.type === "input" ? (
     <div className="input">
       <label>{props.label}</label>
-      <input type={props.inputType} label={props.label} />
+      <input defaultValue="" type={props.inputType} label={props.label} name={props.name}/>
     </div>
   ) : (
     <div className="textarea">
       <label>{props.label}</label>
-      <textarea label={props.label} />
+      <textarea name={props.name} label={props.label} />
     </div>
   );
 };
