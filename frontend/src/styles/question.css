@@ -24,7 +24,7 @@
     }
 
     & .question-header-user p {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: 700;
         padding: 0 1rem;
     }
@@ -39,7 +39,7 @@
     }
 
     & .question-content {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         padding: 3rem 0 0 1rem;
         font-weight: 400;
     }

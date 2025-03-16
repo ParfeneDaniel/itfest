@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="../styles/headmaster-card.css" />
     <link rel="stylesheet" href="../styles/group-card.css" />
     <link rel="stylesheet" href="../styles/student-card.css" />
-    <link rel="stylesheet" href="../styles/add-card.css">
-    <link rel="stylesheet" href="../styles/group-selector.css">
-    <link rel="stylesheet" href="../styles/add-post.css">
+    <link rel="stylesheet" href="../styles/add-card.css" />
+    <link rel="stylesheet" href="../styles/group-selector.css" />
+    <link rel="stylesheet" href="../styles/add-post.css" />
+    <link rel="stylesheet" href="../styles/answer-comment.css" />
+    <link rel="stylesheet" href="../styles/user-card.css" />
+    <link rel="stylesheet" href="../styles/input.css" />
     <script
       src="https://kit.fontawesome.com/3b74847688.js"
       crossorigin="anonymous"
@@ -182,10 +185,70 @@
       <button class="filledButton medium">Creare</button>
     </div> -->
 
-<!--     <div class="addPost-container">
+    <!--     <div class="addPost-container">
         <label for="writingZone">Intreaba aici:</label>
         <textarea name="writingZone" id="writingZone"></textarea>
         <button class="filledButton medium">Adauga</button>
     </div> -->
+
+    <!--     <div class="answer-comment">
+      <div class="answer-data">
+        <p>Popescu Ion</p>
+        <div class="answer-upvote">
+          <p>M-a ajutat!</p>
+          <i class="fa-solid fa-arrow-up selected"></i>
+        </div>
+        
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
+        veniam. Quasi magnam voluptatibus voluptate sequi, hic natus aspernatur
+        quia excepturi commodi vitae maxime accusantium tempore, laboriosam
+        nostrum asperiores, eius earum minima placeat veniam labore pariatur
+        ipsam perspiciatis! Ut laboriosam facilis, totam unde, sunt vel nostrum
+        nemo, pariatur natus consequuntur perferendis?
+      </p>
+    </div> -->
+
+    <div class="user-card">
+      <div class="user-info">
+        <i class="fa-solid fa-circle-user"></i>
+        <div class="info">
+          <p>Poepscu Ion</p>
+          <p>popescuion@gmail.com</p>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="field-container">
+          <div class="field-name">
+            <label for="name">Nume</label>
+            <input type="text" id="name" class="input" />
+          </div>
+          <div class="field-description">
+            <label for="description">Descriere</label>
+            <textarea
+              name="description"
+              id="description"
+              class="textarea"
+            ></textarea>
+          </div>
+        </div>
+        <div class="data-container">
+          <div class="data-upvotes">
+            <p>All time upvotes:</p>
+            <div class="upvotes-container">
+              <p>16</p>
+              <i class="fa-solid fa-arrow-up"></i>
+            </div>
+          </div>
+          <button class="filledButton medium change-password">Change Password</button>
+        </div>
+        
+      </div>
+      <div class="button-container">
+        <button class="filledButton medium">Save</button>
+      </div>
+      
+    </div>
   </body>
 </html>
