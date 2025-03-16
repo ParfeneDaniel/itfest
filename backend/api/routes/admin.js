@@ -18,9 +18,9 @@ router.post("/request", tryCatch(sendRequest)); //✅
 router.use(authorization("admin"));
 router.use(validIds);
 router.get("/requests", tryCatch(getRequests)); // ✅
-router.get("/universities", tryCatch(getUniversities));
+router.get("/universities", tryCatch(getUniversities)); // ✅
 router.post("/request/:requestId", tryCatch(acceptRequest)); // ✅
-router.delete("/request/:requestId", tryCatch(rejectRequest));
+router.delete("/request/:requestId", tryCatch(rejectRequest)); // ✅
 router.post("/validate/:requestId", tryCatch(validateIdentity)); // ✅
 router.use(errorHandler);
 
