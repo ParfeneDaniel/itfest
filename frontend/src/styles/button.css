@@ -11,6 +11,21 @@
   cursor: pointer;
 }
 
+.roundedButton{
+  font-size: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 1rem;
+  border: none;
+  background-color: var(--secondary);
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .small {
   font-size: 1rem;
   padding: 0.7rem 1rem;

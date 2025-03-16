@@ -1,14 +1,11 @@
-import '../styles/button.css';
+import "../styles/button.css";
 
-const Button = (props) => {
+const Button = ({ type, action, children }) => {
   return (
-      <button
-        className={props.type}
-        action={props.action}
-      >
-        {props.text || <img src={props.image} />}
-      </button>
-  )
-}
+    <button className={type} action={action}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;

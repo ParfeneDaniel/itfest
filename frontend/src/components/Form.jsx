@@ -3,9 +3,15 @@ import Input from "./Input";
 import "../styles/form.css";
 import { useState } from "react";
 
-const Form = ({ title, inputs, button, onSubmit, type }) => {
-  const [selectedValue, setSelectedValue] = useState("student");
-
+const Form = ({
+  selectedValue,
+  setSelectedValue,
+  title,
+  inputs,
+  button,
+  onSubmit,
+  type,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -39,7 +45,7 @@ const Form = ({ title, inputs, button, onSubmit, type }) => {
           <div
             onClick={() => setSelectedValue("student")}
             className={
-              "choice " + (selectedValue == "student" ? "choice-selected" : "")
+              "pointer choice " + (selectedValue == "student" ? "choice-selected" : "")
             }
           >
             Student
@@ -47,7 +53,7 @@ const Form = ({ title, inputs, button, onSubmit, type }) => {
           <div
             onClick={() => setSelectedValue("facultate")}
             className={
-              "choice " +
+              "pointer choice " +
               (selectedValue == "facultate" ? "choice-selected" : "")
             }
           >
@@ -56,14 +62,16 @@ const Form = ({ title, inputs, button, onSubmit, type }) => {
           <div
             onClick={() => setSelectedValue("admin")}
             className={
-              "choice " + (selectedValue == "admin" ? "choice-selected" : "")
+              "pointer choice " + (selectedValue == "admin" ? "choice-selected" : "")
             }
           >
             Admin
           </div>
         </div>
       )}
-      <h1 class="form-title">{type === "tab" ? (title + " " + selectedValue) : title}</h1>
+      <h1 class="form-title">
+        {type === "tab" ? title + " " + selectedValue : title}
+      </h1>
       {inputs.map((input, index) => {
         return (
           <Input
@@ -74,7 +82,9 @@ const Form = ({ title, inputs, button, onSubmit, type }) => {
           />
         );
       })}
-      <Button text={button.text} type={button.type} action={button.action} />
+      <Button type={button.type} action={button.action}>
+        {button.text}
+      </Button>
     </form>
   );
 };

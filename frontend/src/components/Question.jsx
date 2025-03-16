@@ -17,7 +17,7 @@ const Question = (props) => {
           {props.post}
         </p>
         <div className="btn-container">
-            <Button type="filledButton big" text="Răspunde" action="" />
+            <Button type="filledButton medium" action="" >Răspunde</Button>
         </div>
       </div>
     </div>

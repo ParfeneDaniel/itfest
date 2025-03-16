@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import SideNav from "../components/SideNav";
 import Question from "../components/Question";
+import MessageCard from "../components/MessageCard";
+import Searchbar from "../components/Searchbar";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const DashboardStudent = () => {
   const subjects = ["ASDII", "PII", "CDI", "MPI", "LE"];
+  const [searchBarValue, setSearchBarValue] = useState("");
 
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
-
+  // const posts = [];
   const posts = [
     {
       title: "Ajutor",
@@ -37,11 +42,11 @@ const DashboardStudent = () => {
 
   useEffect(() => {
     //request posts
-  }, [selectedSubject])
+  }, [selectedSubject]);
 
   return (
     <>
-      <Header />
+      <Header type="student" />
       <div className="flex-row">
         <SideNav
           subjects={subjects}
@@ -49,16 +54,34 @@ const DashboardStudent = () => {
           setSelected={setSelectedSubject}
         />
         <div id="dashboard" className="posts">
-          {posts.map((post, index) => {
-            return (
-              <Question
-                autor={post.autor}
-                time={post.time}
-                post={post.post}
-                key={index}
-              />
-            );
-          })}
+          <div className="flex-row center">
+            <Searchbar setValue={setSearchBarValue} />
+            <Button type="roundedButton">
+              <i class="fa-solid fa-plus" />
+            </Button>
+            <Link to="/leaderboard" className="link">
+              <Button type="roundedButton">
+                <i class="fa-solid fa-trophy" />
+              </Button>
+            </Link>
+          </div>
+          {posts.length == 0 ? (
+            <MessageCard img="penPaper">
+              Încă nu există postări pe acest canal. Fi primul care întreabă
+              ceva! :)
+            </MessageCard>
+          ) : (
+            posts.map((post, index) => {
+              return (
+                <Question
+                  autor={post.autor}
+                  time={post.time}
+                  post={post.post}
+                  key={index}
+                />
+              );
+            })
+          )}
         </div>
       </div>
     </>
